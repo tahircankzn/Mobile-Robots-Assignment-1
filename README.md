@@ -291,7 +291,7 @@ Füzyon ölçümü: LiDAR konumu + IMU açısı + enkoder odometrisi
 
 ---
 
-<details>
+<details open>
 <summary>🤖 Reaktif Planlayıcılar (Bug1, Bug2, Potential Fields)</summary>
 
 | | Bug1 | Bug2 | Potential Fields |
