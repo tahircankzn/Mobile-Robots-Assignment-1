@@ -291,6 +291,15 @@ Füzyon ölçümü: LiDAR konumu + IMU açısı + enkoder odometrisi
 
 ---
 
+<details>
+<summary>🤖 Reaktif Planlayıcılar (Bug1, Bug2, Potential Fields)</summary>
+
+| | Bug1 | Bug2 | Potential Fields |
+|---|---|---|---|
+| diff | ![](outputs/diff__bug1__local__reaktif/yol.png) | ![](outputs/diff__bug2__local__reaktif/yol.png) | ![](outputs/diff__potentialfields__local__reaktif/yol.png) |
+
+</details>
+
 ## Kaynaklar
 
 [1] V. Ušinskis, M. Nowicki, A. Dzedzickis ve V. Bučinskas, "Sensor-fusion based navigation for autonomous mobile robot," *Sensors*, cilt 25, sayı 4, makale 1248, 2025, doi: 10.3390/s25041248.
