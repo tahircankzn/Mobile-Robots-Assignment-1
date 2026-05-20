@@ -75,9 +75,18 @@ pip install -r requirements.txt
 
 `requirements.txt`:
 ```
-numpy>=1.24
-pygame>=2.5
-matplotlib>=3.7
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.63.0
+kiwisolver==1.5.0
+matplotlib==3.10.9
+numpy==2.4.4
+packaging==26.2
+pillow==12.2.0
+pygame-ce==2.5.7
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+six==1.17.0
 ```
 
 ---
