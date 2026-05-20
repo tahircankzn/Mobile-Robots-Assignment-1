@@ -298,6 +298,185 @@ Füzyon ölçümü: LiDAR konumu + IMU açısı + enkoder odometrisi
 |---|---|---|---|
 | diff | ![](outputs/diff__bug1__local__reaktif/yol.png) | ![](outputs/diff__bug2__local__reaktif/yol.png) | ![](outputs/diff__potentialfields__local__reaktif/yol.png) |
 
+---
+
+## Tamamlanan Simülasyon Kombinasyonları
+
+Toplam **57 simülasyon**, **231 çıktı görseli** üretilmiştir.
+
+### Tüm Kombinasyonlar
+
+| Robot | Planlayıcı | Metrik | Kriter |
+|---|---|---|---|
+| differential | astar | chebyshev | shortest |
+| differential | astar | diagonal | shortest |
+| differential | astar | euclidean | shortest |
+| differential | astar | euclidean | safest |
+| differential | astar | manhattan | shortest |
+| differential | astar | minkowski2 | shortest |
+| differential | astar | minkowski3 | fastest |
+| differential | astar | minkowski3 | safest |
+| differential | astar | minkowski3 | shortest |
+| differential | astar | minkowski3 | smoothest |
+| differential | astar | octile | safest |
+| differential | astar | octile | shortest |
+| differential | rrt | minkowski2 | shortest |
+| differential | bug1 | local | reaktif |
+| differential | bug2 | local | reaktif |
+| differential | potentialfields | local | reaktif |
+| ackermann | astar | chebyshev | fastest |
+| ackermann | astar | euclidean | shortest |
+| ackermann | dijkstra | octile | shortest |
+| fixedwing | astar | chebyshev | safest |
+| fixedwing | astar | diagonal | safest |
+| fixedwing | astar | euclidean | fastest |
+| fixedwing | astar | euclidean | safest |
+| fixedwing | astar | euclidean | shortest |
+| fixedwing | astar | euclidean | smoothest |
+| fixedwing | astar | manhattan | safest |
+| fixedwing | astar | manhattan | shortest |
+| fixedwing | astar | minkowski2 | safest |
+| fixedwing | astar | minkowski3 | safest |
+| fixedwing | astar | minkowski3 | shortest |
+| fixedwing | astar | octile | safest |
+| fixedwing | dijkstra | euclidean | shortest |
+| fixedwing | dstar | diagonal | shortest |
+| fixedwing | rrt* | minkowski3 | shortest |
+| fixedwing | bug0 | local | reaktif |
+| omni | astar | euclidean | safest |
+| omni | astar | euclidean | shortest |
+| omni | rrt | chebyshev | shortest |
+| omni | potentialfields | local | reaktif |
+| mecanum | astar | euclidean | shortest |
+| mecanum | dijkstra | manhattan | safest |
+| hexapod | astar | euclidean | shortest |
+| hexapod | dstar | euclidean | shortest |
+| quadruped | astar | euclidean | fastest |
+| quadruped | dstar | diagonal | shortest |
+| drone | astar | euclidean | shortest |
+| drone | astar | manhattan | fastest |
+| drone | rrt* | octile | shortest |
+| snake | astar | euclidean | safest |
+| snake | astar | euclidean | shortest |
+| bipedal | astar | euclidean | shortest |
+| vtol | astar | euclidean | shortest |
+| vtol | dstar | diagonal | shortest |
+
+---
+
+### Galeriler
+
+<details open>
+<summary>🤖 11 Robot — Referans Koşu (A* + Euclidean)</summary>
+
+| Differential | Ackermann | Fixed Wing |
+|:---:|:---:|:---:|
+| ![](outputs/rapor_20260519_132804/diff__astar__euclidean__shortest/yol.png) | ![](outputs/rapor_20260519_132804/ackermann__astar__euclidean__shortest/yol.png) | ![](outputs/rapor_20260519_132804/fixedwing__astar__euclidean__safest/yol.png) |
+| **Omni** | **Mecanum** | **Hexapod** |
+| ![](outputs/rapor_20260519_132804/omni__astar__chebyshev__shortest/yol.png) | ![](outputs/rapor_20260519_132804/mecanum__dijkstra__manhattan__safest/yol.png) | ![](outputs/rapor_20260519_132804/hex__astar__euclidean__shortest/yol.png) |
+| **Drone** | **VTOL** | **Snake** |
+| ![](outputs/rapor_20260519_132804/quadrotor__astar__euclidean__shortest/yol.png) | ![](outputs/rapor_20260519_132804/vtol__astar__euclidean__shortest/yol.png) | ![](outputs/rapor_20260519_132804/snake__astar__manhattan__shortest/yol.png) |
+| **Quadruped** | **Bipedal** | |
+| ![](outputs/rapor_20260519_132804/quad__astar__euclidean__shortest/yol.png) | ![](outputs/rapor_20260519_132804/biped__astar__euclidean__shortest/yol.png) | |
+
+</details>
+
+<details open>
+<summary>📐 Differential Drive — A* Mesafe Metriği Karşılaştırması</summary>
+
+| Euclidean | Manhattan | Chebyshev |
+|:---:|:---:|:---:|
+| ![](outputs/diff__astar__euclidean__shortest/yol.png) | ![](outputs/diff__astar__manhattan__shortest/yol.png) | ![](outputs/diff__astar__chebyshev__shortest/yol.png) |
+| **Diagonal** | **Octile** | **Minkowski2** |
+| ![](outputs/diff__astar__diagonal__shortest/yol.png) | ![](outputs/diff__astar__octile__shortest/yol.png) | ![](outputs/diff__astar__minkowski2__shortest/yol.png) |
+| **Minkowski3** | | |
+| ![](outputs/diff__astar__minkowski3__shortest/yol.png) | | |
+
+</details>
+
+<details open>
+<summary>🎯 Differential Drive — Kriter Karşılaştırması (Minkowski3)</summary>
+
+| Shortest | Safest | Fastest | Smoothest |
+|:---:|:---:|:---:|:---:|
+| ![](outputs/diff__astar__minkowski3__shortest/yol.png) | ![](outputs/diff__astar__minkowski3__safest/yol.png) | ![](outputs/diff__astar__minkowski3__fastest/yol.png) | ![](outputs/diff__astar__minkowski3__smoothest/yol.png) |
+
+</details>
+
+<details open>
+<summary>🔄 Differential Drive — Planlayıcı Karşılaştırması</summary>
+
+| A* (Euclidean) | RRT (Minkowski2) | Bug1 |
+|:---:|:---:|:---:|
+| ![](outputs/diff__astar__euclidean__shortest/yol.png) | ![](outputs/diff__rrt__minkowski2__shortest/yol.png) | ![](outputs/diff__bug1__local__reaktif/yol.png) |
+| **Bug2** | **Potential Fields** | |
+| ![](outputs/diff__bug2__local__reaktif/yol.png) | ![](outputs/diff__potentialfields__local__reaktif/yol.png) | |
+
+</details>
+
+<details open>
+<summary>✈️ Fixed Wing — Kapsamlı Test (16 Kombinasyon)</summary>
+
+| A*+Euclidean+Shortest | A*+Euclidean+Safest | A*+Euclidean+Fastest |
+|:---:|:---:|:---:|
+| ![](outputs/fixedwing__astar__euclidean__shortest/yol.png) | ![](outputs/fixedwing__astar__euclidean__safest/yol.png) | ![](outputs/fixedwing__astar__euclidean__fastest/yol.png) |
+| **A*+Euclidean+Smoothest** | **A*+Chebyshev+Safest** | **A*+Diagonal+Safest** |
+| ![](outputs/fixedwing__astar__euclidean__smoothest/yol.png) | ![](outputs/fixedwing__astar__chebyshev__safest/yol.png) | ![](outputs/fixedwing__astar__diagonal__safest/yol.png) |
+| **A*+Manhattan+Safest** | **A*+Manhattan+Shortest** | **A*+Minkowski2+Safest** |
+| ![](outputs/fixedwing__astar__manhattan__safest/yol.png) | ![](outputs/fixedwing__astar__manhattan__shortest/yol.png) | ![](outputs/fixedwing__astar__minkowski2__safest/yol.png) |
+| **A*+Minkowski3+Safest** | **A*+Minkowski3+Shortest** | **A*+Octile+Safest** |
+| ![](outputs/fixedwing__astar__minkowski3__safest/yol.png) | ![](outputs/fixedwing__astar__minkowski3__shortest/yol.png) | ![](outputs/fixedwing__astar__octile__safest/yol.png) |
+| **Dijkstra+Euclidean** | **D*+Diagonal** | **RRT*+Minkowski3** |
+| ![](outputs/fixedwing__dijkstra__euclidean__shortest/yol.png) | ![](outputs/fixedwing__dstar__diagonal__shortest/yol.png) | ![](outputs/fixedwing__rrtstar__minkowski3__shortest/yol.png) |
+| **Bug0** | | |
+| ![](outputs/fixedwing__bug0__local__reaktif/yol.png) | | |
+
+</details>
+
+<details open>
+<summary>🎡 Omni Yönlü Robot</summary>
+
+| A*+Euclidean+Shortest | A*+Euclidean+Safest | RRT+Chebyshev | Potential Fields |
+|:---:|:---:|:---:|:---:|
+| ![](outputs/omni__astar__euclidean__shortest/yol.png) | ![](outputs/omni__astar__euclidean__safest/yol.png) | ![](outputs/omni__rrt__chebyshev__shortest/yol.png) | ![](outputs/omni__potentialfields__local__reaktif/yol.png) |
+
+</details>
+
+<details open>
+<summary>🚗 Ackermann — Mecanum</summary>
+
+| Ackermann A*+Chebyshev+Fastest | Ackermann A*+Euclidean+Shortest | Ackermann Dijkstra+Octile |
+|:---:|:---:|:---:|
+| ![](outputs/ackermann__astar__chebyshev__fastest/yol.png) | ![](outputs/ackermann__astar__euclidean__shortest/yol.png) | ![](outputs/ackermann__dijkstra__octile__shortest/yol.png) |
+| **Mecanum A*+Euclidean** | **Mecanum Dijkstra+Manhattan+Safest** | |
+| ![](outputs/mecanum__astar__euclidean__shortest/yol.png) | ![](outputs/mecanum__dijkstra__manhattan__safest/yol.png) | |
+
+</details>
+
+<details open>
+<summary>🦿 Hexapod — Quadruped — Bipedal</summary>
+
+| Hexapod A*+Euclidean | Hexapod D*+Euclidean | Quadruped A*+Euclidean+Fastest |
+|:---:|:---:|:---:|
+| ![](outputs/hex__astar__euclidean__shortest/yol.png) | ![](outputs/hex__dstar__euclidean__shortest/yol.png) | ![](outputs/quad__astar__euclidean__fastest/yol.png) |
+| **Quadruped D*+Diagonal** | **Bipedal A*+Euclidean** | |
+| ![](outputs/quad__dstar__diagonal__shortest/yol.png) | ![](outputs/biped__astar__euclidean__shortest/yol.png) | |
+
+</details>
+
+<details open>
+<summary>🚁 Drone (Quadrotor) — VTOL — Snake</summary>
+
+| Drone A*+Euclidean | Drone A*+Manhattan+Fastest | Drone RRT*+Octile |
+|:---:|:---:|:---:|
+| ![](outputs/quadrotor__astar__euclidean__shortest/yol.png) | ![](outputs/quadrotor__astar__manhattan__fastest/yol.png) | ![](outputs/quadrotor__rrtstar__octile__shortest/yol.png) |
+| **VTOL A*+Euclidean** | **VTOL D*+Diagonal** | **Snake A*+Euclidean** |
+| ![](outputs/vtol__astar__euclidean__shortest/yol.png) | ![](outputs/vtol__dstar__diagonal__shortest/yol.png) | ![](outputs/snake__astar__euclidean__shortest/yol.png) |
+| **Snake A*+Euclidean+Safest** | | |
+| ![](outputs/snake__astar__euclidean__safest/yol.png) | | |
+
+</details>
+
 </details>
 
 ## Kaynaklar
