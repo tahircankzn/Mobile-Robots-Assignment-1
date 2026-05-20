@@ -1,0 +1,26 @@
+================================================================================
+  RAPOR MODU — SİMÜLASYON SONUÇLARI
+  Tarih : 2026-05-18 19:10:36
+  Klasör: G:\Son Muharebe\Mobil Robotlar\ödev_1\outputs\rapor_20260518_191008
+================================================================================
+
+Robot            Planlayıcı   Metrik       Kriter       RMSE(m)    Yol(hcr)   Süre(s)   Durum
+-------------------------------------------------------------------------------------
+differential     astar        euclidean    shortest     0.1298     54.0       2.8       OK
+ackermann        astar        euclidean    shortest     0.1345     54.0       3.0       OK
+fixedwing        astar        euclidean    safest       0.1354     60.0       2.0       OK
+snake            astar        manhattan    shortest     0.1322     59.0       2.5       OK
+bipedal          astar        euclidean    shortest     0.1320     54.0       2.4       OK
+omni             astar        chebyshev    shortest     0.1338     54.0       2.5       OK
+mecanum          dijkstra     manhattan    safest       0.1356     99.0       2.6       OK
+quadruped        astar        euclidean    shortest     0.1331     54.0       2.4       OK
+hexapod          astar        euclidean    shortest     0.1329     54.0       2.4       OK
+drone            astar        euclidean    shortest     0.1315     54.0       2.4       OK
+vtol             astar        euclidean    shortest     0.1328     54.0       2.4       OK
+
+================================================================================
+  Toplam: 11  |  Başarılı: 11  |  Başarısız: 0
+
+  En Düşük RMSE : differential / astar / euclidean / shortest = 0.1298 m
+  En Kısa Yol   : differential / astar / euclidean / shortest = 54.0 hücre
+================================================================================
